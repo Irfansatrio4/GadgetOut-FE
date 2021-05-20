@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import { icons } from 'react-icons'
 import { Link } from 'react-router-dom'
 import '../assets/css/navbar.css'
 import logo from '../assets/img/GadgetOut.png'
 
 
+
 function Navbar() {
+    
     
     return (
         <div>
@@ -15,11 +18,11 @@ function Navbar() {
                 <div className="d-flex collapse navbar-collapse" id="navbarTogglerDemo01">
                     <ul className=" navbar-nav  d-flex align-items-start">
                         <li className="nav-item ">
-                            <Link className="navbar-brand ml-5" to="/">
+                            <Link className="navbar-brand ml-5 mt-3" to="/">
                                 <img src={logo} alt="gadget" />
                             </Link>
                         </li>
-                        <li className="nav-item "style = {{marginLeft : "250px"}}>
+                        <li className="nav-item "style = {{marginLeft : "380px"}}>
 
                             <form className="form-inline w-100 my-lg-0">
                                 <div className="form-group w-100 input-group has-search">
@@ -27,14 +30,11 @@ function Navbar() {
                                         type="text"
                                         className="form-control"
                                         placeholder="Cari Gadget"
-                                        style={{ borderRadius: "40px", fontSize: "15px", padding: "20px", paddingLeft: "50px", width: "550px" }}
+                                        style={{ borderRadius: "5px", fontSize: "15px", padding: "20px", paddingLeft: "50px", width: "700px" }}
                                         aria-label="Large"
                                         aria-describedby="inputGroup-sizing-sm"
                                         onSubmit={<Link to="/result"></Link>}
                                     />
-                                    <button type="submit" className="btn-search">
-                                        <i className="fa fa-search"></i>
-                                    </button>
                                 </div>
                             </form>
                         </li>
