@@ -33,30 +33,53 @@ function Detail(props) {
                         </Col>
                         <Col sm="12" md={{ size: 6, offset: 3 }}>
                             <div className="row">
-                                <div className="col-4" style={{ marginLeft: "100px" }}>
-                                    <img style={{ width: "350px", height: "350px", borderRadius: "20px", boxShadow: "20px" }} class="card-img" src={data.urlFoto} alt="samsudin" />
+                            <div className="col d-flex justify-content-center" >
+                                {/* <div className="col" style={{ marginLeft: "100px" }}> */}
+                                    <img style={{ width: "350px", height: "350px", borderRadius: "20px", boxShadow: "20px" }} class="card-img img-fluid" src={data.urlFoto} alt="samsudin" />
                                 </div>
                             </div>
                         </Col>
                         <Col sm="12" md={{ size: 6, offset: 3 }}>
-                            <div className="row mt-5">
-                                <div className="col-6" style={{ fontSize: "20px", }}>
-                                    <strong>Brand</strong><br></br>
-                                    <strong>Harga  </strong><br></br>
-                                    <strong>RAM  </strong><br></br>
-                                    <strong>Storage Internal</strong><br></br>
-                                    <strong>Kapasitas Battery</strong><br></br>
-                                    <strong>Ukuran Layar</strong><br></br>
-                                </div>
-
-                                <div className="col-6" style={{ fontSize: "20px" }}>
-                                    <div>{data.brand}</div>
-                                    <div>Rp.{data.harga},00</div>
-                                    <div>{data.RAM}</div>
-                                    <div>{data.ROM}</div>
-                                    <div>{data.battery}</div>
-                                    <div>{data.screen}</div>
-                                </div>
+                            <div className="row mt-5" >
+                            <table class="table table-borderless">
+  
+  <tbody style={{ fontSize: "20px", }}>
+    <tr>
+      <th scope="row">Brand</th>
+      <td>{data.brand}</td>
+   
+     
+    </tr>
+    <tr>
+      <th scope="row">Harga</th>
+      <td>Rp. {data.harga},00</td>
+      
+     
+    </tr>
+    <tr>
+      <th scope="row">RAM</th>
+      <td > {data.RAM}</td>
+     
+    </tr>
+    <tr>
+      <th scope="row">Storage Internal</th>
+      <td >{data.ROM}</td>
+    
+    </tr>
+    <tr>
+      <th scope="row">Kapasitas Baterai</th>
+      <td >{data.battery}</td>
+     
+    </tr>
+    <tr>
+      <th scope="row">Ukuran Layar</th>
+      <td >{data.screen}</td>
+     
+    </tr>
+  </tbody>
+</table>
+                                
+                                
                             </div>
                         </Col>
                     </div> : null

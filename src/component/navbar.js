@@ -34,10 +34,10 @@ function Navbar() {
                     <ul className=" navbar-nav  d-flex align-items-start">
                         <li className="nav-item ">
                             <Link className="navbar-brand ml-5 mt-3" to="/">
-                                <img src={logo} alt="gadget" />
+                                <img src={logo} className=""alt="gadget" />
                             </Link>
                         </li>
-                        <li className="nav-item  w-100" style={{ marginLeft: "20%",marginRight: "20%" }}>
+                        <li  className="nav-item search-custom w-100" style={{ marginLeft: "15%",marginRight: "20%" }}>
 
                             <form className="form-inline w-100 my-lg-0">
                                 <div className="form-group w-100 input-group has-search">
@@ -48,7 +48,7 @@ function Navbar() {
                                         placeholder="Cari Gadget"
                                         value={search}
                                         onChange={inputHandler}
-                                        style={{ borderRadius: "5px", fontSize: "15px", padding: "20px", paddingLeft: "50px" }}
+                                        style={{ borderRadius: "5px", fontSize: "15px", padding: "20px", paddingLeft: "1%" }}
                                         aria-label="Large"
                                         aria-describedby="inputGroup-sizing-sm"
 
