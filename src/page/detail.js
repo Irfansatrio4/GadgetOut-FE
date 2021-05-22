@@ -3,7 +3,6 @@ import '../assets/css/style.css'
 import { Link } from 'react-router-dom'
 import '../assets/css/navbar.css'
 import Navbar from '../component/navbar'
-import asset from '../assets/img/samsung.png'
 import { Col } from 'reactstrap'
 import axios from "axios"
 
@@ -20,10 +19,9 @@ function Detail(props) {
             .catch(error => {
                 console.log(error);
             })
-    }, [])
+    }, [id])
     return (
         <div>
-            <h1>detail</h1>
             <Navbar />
             {
                 data ?
@@ -36,7 +34,7 @@ function Detail(props) {
                         <Col sm="12" md={{ size: 6, offset: 3 }}>
                             <div className="row">
                                 <div className="col-4" style={{ marginLeft: "100px" }}>
-                                    <img style={{ width: "350px", height: "350px", borderRadius: "20px", boxShadow: "20px" }} class="card-img" src={asset} alt="samsudin" />
+                                    <img style={{ width: "350px", height: "350px", borderRadius: "20px", boxShadow: "20px" }} class="card-img" src={data.urlFoto} alt="samsudin" />
                                 </div>
                             </div>
                         </Col>

@@ -2,12 +2,8 @@ import React, { useState, useEffect } from 'react'
 import '../assets/css/navbar.css'
 import '../assets/css/style.css'
 import Navbar from '../component/navbar'
-import asset from '../assets/img/samsung.png'
 import { Link } from 'react-router-dom'
 import axios from "axios"
-import { createBootstrapComponent } from 'react-bootstrap/esm/ThemeProvider'
-// import Sidebar from '../component/sidebar'
-// import '../assets/css/sidebar.css'
 
 
 function HomePage(props) {
@@ -66,7 +62,7 @@ function HomePage(props) {
             <div className="container pt-5">
                 <h1>Produk</h1>
                 <div className="row">
-                    <div className="col-12">
+                    <div className="col-lg-12 col">
                         <div>
                             {search ? (
                                 <div className="result-card flex-wrap d-flex justify-content-center w-100">
@@ -76,7 +72,7 @@ function HomePage(props) {
                                             <div className="grid-item">
                                                 <Link to={`/detail/${e.id}`}>
                                                     <div className="card">
-                                                        <img className="card-img" src={asset} />
+                                                        <img className="card-img" src={e.urlFoto} style= {{width: "80%"}}/>
                                                         <div className="card-content">
                                                             <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
                                                         </div>
@@ -91,7 +87,7 @@ function HomePage(props) {
                                             <div className="grid-item">
                                                 <Link to={`/detail/${e.id}`}>
                                                     <div className="card">
-                                                        <img className="card-img" src={asset} />
+                                                        <img className="card-img" src={e.urlFoto} style= {{width: "80%"}}/>
                                                         <div className="card-content">
                                                             <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
                                                         </div>
@@ -106,7 +102,7 @@ function HomePage(props) {
                                             <div className="grid-item">
                                                 <Link to={`/detail/${e.id}`}>
                                                     <div className="card">
-                                                        <img className="card-img" src={asset} />
+                                                        <img className="card-img" src={e.urlFoto} style= {{width: "80%" , justifyContent: "center"}}/>
                                                         <div className="card-content">
                                                             <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
                                                         </div>
@@ -124,7 +120,7 @@ function HomePage(props) {
                                             <div className="grid-item">
                                                 <Link to={`/detail/${e.id}`}>
                                                     <div className="card">
-                                                        <img className="card-img" src={asset} />
+                                                        <img className="card-img" src={e.urlFoto} style= {{width: "80%" ,}} />
                                                         <div className="card-content">
                                                             <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
                                                         </div>

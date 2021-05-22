@@ -11,10 +11,11 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact component={HomePage}></Route>
-        <Route path="/:search" component={(props) => <HomePage {...props} />}>
+        <Route path="/:search" exact component={(props) => <HomePage {...props} />}>
         </Route>
         <Route path="/detail/:id" component={(props) => <Detail {...props} />}>
         </Route>
+        <Route path = "/detail" exact component = {Detail}></Route>
       </Switch>
     </Router>
   );

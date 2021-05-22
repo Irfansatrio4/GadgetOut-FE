@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { icons } from 'react-icons'
 import { Link } from 'react-router-dom'
 import '../assets/css/navbar.css'
 import logo from '../assets/img/GadgetOut.png'
+import { FaSearch } from 'react-icons/fa'
 
 
 
@@ -24,9 +24,8 @@ function Navbar() {
     //     history.push("/")
     // }
 
-
     return (
-        <div>
+        <div >
             <nav
                 className="navbar navbar-desktop navbar-expand"
                 style={{ zIndex: "2" }}
@@ -38,25 +37,30 @@ function Navbar() {
                                 <img src={logo} alt="gadget" />
                             </Link>
                         </li>
-                        <li className="nav-item " style={{ marginLeft: "380px" }}>
+                        <li className="nav-item  w-100" style={{ marginLeft: "20%",marginRight: "20%" }}>
 
                             <form className="form-inline w-100 my-lg-0">
                                 <div className="form-group w-100 input-group has-search">
+
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className="form-control "
                                         placeholder="Cari Gadget"
                                         value={search}
                                         onChange={inputHandler}
-                                        style={{ borderRadius: "5px", fontSize: "15px", padding: "20px", paddingLeft: "50px", width: "700px" }}
+                                        style={{ borderRadius: "5px", fontSize: "15px", padding: "20px", paddingLeft: "50px" }}
                                         aria-label="Large"
                                         aria-describedby="inputGroup-sizing-sm"
+
                                     // onSubmit={<Link to="/result"></Link>}
                                     />
                                     <Link to={`/${search}`}>
-                                        <button type="submit" className="btn-search" style={{ backgroundColor: "white" }}>
-                                            <i className="fa fa-search"></i>
+                                        
+
+                                        <button type="submit" className="btn-search ml-4" style={{ backgroundColor: "white", padding:"7px", borderRadius:"5px" }}>
+                                            <div><FaSearch /></div>
                                         </button>
+                                        
                                     </Link>
                                 </div>
                             </form>
