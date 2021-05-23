@@ -9,20 +9,11 @@ import { FaSearch } from 'react-icons/fa'
 
 
 function Navbar() {
-    // let history = useHistory();
 
     const [search, setSearch] = useState(null)
-
-
     const inputHandler = (e) => {
         setSearch(e.target.value)
     }
-
-    // const onSubmitHandler = (e) => {
-    //     e.preventDefault();
-
-    //     history.push("/")
-    // }
 
     return (
         <div >
@@ -51,8 +42,6 @@ function Navbar() {
                                         style={{ borderRadius: "5px", fontSize: "15px", padding: "20px", paddingLeft: "1%" }}
                                         aria-label="Large"
                                         aria-describedby="inputGroup-sizing-sm"
-
-                                    // onSubmit={<Link to="/result"></Link>}
                                     />
                                     <Link to={`/${search}`}>
 
