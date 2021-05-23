@@ -6,12 +6,15 @@ import { Link } from 'react-router-dom'
 import axios from "axios"
 
 
+
 function HomePage(props) {
+    // load data dari Database
     const [data, setData] = useState([])
     const [ram, setRAM] = useState([])
     const [rom, setROM] = useState([])
     const [brand, setBrand] = useState([])
     const { search } = props.match.params
+    //jalanin fungsi pas udah jalan
     useEffect(() => {
         axios
             .get(`http://localhost:5000/api/GadgetOut/?brand=${search}`)
@@ -64,55 +67,67 @@ function HomePage(props) {
                 <div className="row">
                     <div className="col-lg-12 col">
                         <div>
-                            {search ? (
-                                //   {nama.length !== 0 ? (
-                                <div className="result-card flex-wrap d-flex justify-content-center w-100">
-                                    <h1>Ini adalah brand</h1>
-                                    {brand.length>0 ? (brand.map(e => (
-                                        <div className="grid mx-2 mt-5">
-                                            <div className="grid-item">
-                                                <Link to={`/detail/${e.id}`}>
-                                                    <div className="card">
-                                                        <img className="card-img" src={e.urlFoto} style={{ width: "80%" }} />
-                                                        <div className="card-content">
-                                                            <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
-                                                        </div>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    ))) : (<div><p>AAAA</p></div>)}
-                                    {ram.map(e => (
+                            {search ? (<div>
+                                {brand.length || ram.length || rom.length > 0 ? (<div> <div className="result-card flex-wrap d-flex justify-content-center w-100">
+                                    {brand.length > 0 ? (
+                                        <div> <h1> Hasil Pencarian {search} Dalam Brand </h1>
+                                            {brand.map((e) => (
 
-                                        <div className="grid mx-2 mt-5">
-                                            <div className="grid-item">
-                                                <Link to={`/detail/${e.id}`}>
-                                                    <div className="card">
-                                                        <img className="card-img" src={e.urlFoto} style={{ width: "80%" }} />
-                                                        <div className="card-content">
-                                                            <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
-                                                        </div>
+                                                <div className="grid mx-2 mt-5">
+                                                    <div className="grid-item">
+                                                        <Link to={`/detail/${e.id}`}>
+                                                            <div className="card">
+                                                                <img className="card-img" src={e.urlFoto} style={{ width: "80%" }} />
+                                                                <div className="card-content">
+                                                                    <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
                                                     </div>
-                                                </Link>
-                                            </div>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                    {rom.map(e => (
+                                    ) : null}
 
-                                        <div className="grid mx-2 mt-5">
-                                            <div className="grid-item">
-                                                <Link to={`/detail/${e.id}`}>
-                                                    <div className="card">
-                                                        <img className="card-img" src={e.urlFoto} style={{ width: "80%", justifyContent: "center" }} />
-                                                        <div className="card-content">
-                                                            <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
-                                                        </div>
+                                    {ram.length > 0 ? (
+                                        <div> <h1> Hasil Pencarian {search} Dalam RAM</h1>
+                                            { ram.map(e => (
+
+                                                <div className="grid mx-2 mt-5">
+                                                    <div className="grid-item">
+                                                        <Link to={`/detail/${e.id}`}>
+                                                            <div className="card">
+                                                                <img className="card-img" src={e.urlFoto} style={{ width: "80%" }} />
+                                                                <div className="card-content">
+                                                                    <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
                                                     </div>
-                                                </Link>
-                                            </div>
+                                                </div>
+                                            ))}
                                         </div>
+                                    ) : null}
+                                    {rom.length > 0 ? (
+                                        <div> <h1> Hasil Pencarian {search} Dalam ROM</h1>
+                                            { rom.map(e => (
 
-                                    ))}</div>
+                                                <div className="grid mx-2 mt-5">
+                                                    <div className="grid-item">
+                                                        <Link to={`/detail/${e.id}`}>
+                                                            <div className="card">
+                                                                <img className="card-img" src={e.urlFoto} style={{ width: "80%" }} />
+                                                                <div className="card-content">
+                                                                    <h1 className="card-header" style={{ textAlign: "center" }} >{e.title}</h1>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : null}</div></div>) : (<h1>Data Tidak Ditemukan</h1>)}</div>
+
                             ) : (
                                 <div className="result-card flex-wrap d-flex justify-content-center w-100">
                                     {data.map(e => (
