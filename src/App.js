@@ -15,7 +15,7 @@ function App() {
         </Route>
         <Route path="/detail/:id" component={(props) => <Detail {...props} />}>
         </Route>
-        <Route path = "/detail" exact component = {Detail}></Route>
+        <Route path="/detail" exact component={Detail}></Route>
       </Switch>
     </Router>
   );

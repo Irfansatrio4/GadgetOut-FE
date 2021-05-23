@@ -34,10 +34,10 @@ function Navbar() {
                     <ul className=" navbar-nav  d-flex align-items-start">
                         <li className="nav-item ">
                             <Link className="navbar-brand ml-5 mt-3" to="/">
-                                <img src={logo} className=""alt="gadget" />
+                                <img src={logo} className="" alt="gadget" />
                             </Link>
                         </li>
-                        <li  className="nav-item search-custom w-100" style={{ marginLeft: "15%",marginRight: "20%" }}>
+                        <li className="nav-item search-custom w-100" style={{ marginLeft: "15%", marginRight: "20%" }}>
 
                             <form className="form-inline w-100 my-lg-0">
                                 <div className="form-group w-100 input-group has-search">
@@ -55,12 +55,12 @@ function Navbar() {
                                     // onSubmit={<Link to="/result"></Link>}
                                     />
                                     <Link to={`/${search}`}>
-                                        
 
-                                        <button type="submit" className="btn-search ml-4" style={{ backgroundColor: "white", padding:"7px", borderRadius:"5px" }}>
+
+                                        <button type="submit" className="btn-search ml-4" style={{ backgroundColor: "white", padding: "7px", borderRadius: "5px" }}>
                                             <div><FaSearch /></div>
                                         </button>
-                                        
+
                                     </Link>
                                 </div>
                             </form>
